@@ -1,0 +1,6 @@
+function displayText (selectTag) {
+	if (selectTag == "Were you given a discount code?") {
+		document.getElementById("StudentView").style.display = "block";
+	} else {
+		document.getElementById("StudentView").style.display = "none";
+}

@@ -46,5 +46,6 @@ $string['generatereport'] = 'Create Report';
 $string['status'] = 'Allow paid enrolments';
 $string['status_desc'] = 'Allow users to use Payment to enrol into a course by default.';
 $string['unenrolselfconfirm'] = 'Do you really want to unenrol yourself from course "{$a}"?';
+$string['paymentdiscount'] = 'Verify Discount Code';
 
 ?>

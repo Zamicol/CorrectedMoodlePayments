@@ -42,9 +42,16 @@ require_login();
 
 //get key if you don't have one
 if(! $DB->record_exists('enrol_payment', array())) {
+	if(! $DB->record_exists('enrol_payment_discount', array())) {
     $ustg = base64_encode(json_encode($CFG->wwwroot));
     header("Location: https://www.colorado.gov/apps/checkout/servlet/beginSession?token=".urlencode($ustg));
     die();
+	} else {
+	$discount = $DB->get_record_sql('SELECT discountvalue FROM enrol_payment_discount WHERE discountcode == discount');
+	$ustg = base64_encode(json_encode($CFG->wwwroot));
+    header("Location: https://www.colorado.gov/apps/checkout/servlet/beginSession?token=".urlencode($ustg)?$discount);
+    die();
+	}
 }
 
 // if the user isn't saved in the cart database, add them

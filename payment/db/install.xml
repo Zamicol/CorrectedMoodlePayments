@@ -31,6 +31,16 @@
       </KEYS>
     </TABLE>
 	
+	<TABLE NAME="enrol_payment_discount" COMMENT="Database for discounts">
+      <FIELDS>
+        <FIELD NAME="id" 			TYPE="int" 		LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+		<FIELD NAME="discountcode" 	TYPE="char" 	LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="discount code"/>
+        <FIELD NAME="discountvalue" TYPE="float" 	LENGTH="5"	NOTNULL="true" SEQUENCE="false" COMMENT="discount float value"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
 	
 	<TABLE NAME="enrol_payment_cart" COMMENT="Database for payment cart values">
       <FIELDS>
